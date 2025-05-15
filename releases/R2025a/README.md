@@ -154,11 +154,7 @@ If you are deploying MATLAB Production Server to an existing VPC, you must open 
 
 
 #### Use public NAT gateway when deploying to a private subnet
-If are using an existing VPC and deploying in a private subnet, consider using a public NAT gateway associated with a public subnet. This setup allows the Lambda functions to communicate with AWS services. For more information, see [NAT gateways](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html) in the AWS documentation. Alternatively, connect all of these endpoints to the VPC:
-    - EC2 VPC endpoint
-    - AutoScaling VPC endpoint
-    - S3 VPC endpoint
-    - CloudFormation endpoint
+If are using an existing VPC and deploying in a private subnet, consider using a public NAT gateway associated with a public subnet. This setup allows the Lambda functions to communicate with AWS services. For more information, see [NAT gateways](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html) in the AWS documentation.
 
 #### Create interface VPC endpoint when deploying to a public subnet 
 If are using an existing VPC and deploying in a public subnet, then you must add an endpoint to one of the public subnets in the VPC in order to allow the server to access the EC2 API. You can check if such an endpoint already exists by navigating to the AWS Portal, selecting **Endpoints**, and filtering by VPC ID for the VPC you are using for deployment. If no such endpoint is present, follow these steps to create both an EC2 endpoint and an Autoscaling endpoint:
